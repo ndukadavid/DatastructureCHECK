@@ -1,0 +1,67 @@
+// this whole code was written in python
+// problem 1 (solution with array)
+
+def find_sum_of_distinct_elements(set1, set2):
+    distinct_elements = []
+    for element in set1:
+        if element not in distinct_elements:
+            distinct_elements.append(element)
+    for element in set2:
+        if element not in distinct_elements:
+            distinct_elements.append(element)
+    
+    sum_of_distinct_elements = sum(distinct_elements)
+    return sum_of_distinct_elements
+
+# Test the function
+set1 = [3, 1, 7, 9]
+set2 = [2, 4, 1, 9, 3]
+result = find_sum_of_distinct_elements(set1, set2)
+print("Output:", result)  # Output: 13 (distinct elements 4, 7, 2)
+
+
+// problem 2 (solution with array and procedure)
+
+def dot_product(v1, v2):
+    if len(v1) != len(v2):
+        raise ValueError("Vectors must have the same length")
+    
+    ps = 0
+    for i in range(len(v1)):
+        ps += v1[i] * v2[i]
+    return ps
+
+def are_vectors_orthogonal(vectors):
+    for v1, v2 in vectors:
+        if dot_product(v1, v2) == 0:
+            print("Vectors", v1, "and", v2, "are orthogonal.")
+        else:
+            print("Vectors", v1, "and", v2, "are not orthogonal.")
+
+# Test the function
+vectors = [([1, 2, 3], [2, -1, 0]), ([3, 0, -2], [-1, 4, 1])]
+are_vectors_orthogonal(vectors)
+
+
+// problem 2 (solution with array and function)
+
+def dot_product(v1, v2):
+    if len(v1) != len(v2):
+        raise ValueError("Vectors must have the same length")
+    
+    ps = 0
+    for i in range(len(v1)):
+        ps += v1[i] * v2[i]
+    return ps
+
+def are_vectors_orthogonal(vectors):
+    for v1, v2 in vectors:
+        if dot_product(v1, v2) == 0:
+            print("Vectors", v1, "and", v2, "are orthogonal.")
+        else:
+            print("Vectors", v1, "and", v2, "are not orthogonal.")
+
+# Test the function
+vectors = [([1, 2, 3], [2, -1, 0]), ([3, 0, -2], [-1, 4, 1])]
+are_vectors_orthogonal(vectors)
+
